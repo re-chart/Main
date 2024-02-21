@@ -1,4 +1,9 @@
-﻿#$Appname = "Googlechrome"
+#Script by R Visser
+#How to use after install
+#Enter Appname, find apps at: https://community.chocolatey.org/packages
+#Once Installed you can run via cmd choco install <appname>
+
+#$Appname = "Googlechrome"
 # Check Choco is installed
 if (-Not (Get-Command -Name Choco -ErrorAction SilentlyContinue)) {
     
