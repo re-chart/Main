@@ -1,5 +1,7 @@
-﻿# Run parameter: Powershell.exe -file .\wanip.ps1 -UpdateIP <current wan ip> if else script will send mail with new IP.
+# Created by R. Visser
+# Run parameter: Powershell.exe -file .\WanIpMailv2.ps1 -UpdateIP <current wan ip> if else script will send mail with new IP.
 # I created a scheduled job on my host to check every day for IP because ISP is changing it sometimes.
+
 param (
     [Parameter(Mandatory=$true)]
     [string]$UpdateIP
