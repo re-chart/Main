@@ -3,7 +3,7 @@
 # Check and Update office if available.
 
 # Functie Sleep-Progress Bar
-#Use Sleep-Progress <seconds> 
+# Use Sleep-Progress <seconds> 
 
 Function Sleep-Progress($TotalSeconds) {
     $Counter = 0;
@@ -15,7 +15,7 @@ Function Sleep-Progress($TotalSeconds) {
     }   
 }
  
-#Start Office Version Check Script
+# Start Office Version Check Script
 
 Write-Host "Checking script directory..." -ForegroundColor Green
 if (!(Test-Path "C:\Scripts")) {
@@ -56,10 +56,11 @@ Sleep-Progress 3
 $officeVersion = (Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration").VersionToReport
 Write-Host "Office version: $officeVersion" -ForegroundColor Cyan
 
-#Checks if the Office version is already up to date
+# Checks if the Office version is already up to date
 
 Sleep-Progress 3
 
+######### Enter newest version to deploy if else then deploy
 if ($officeVersion -eq "16.0.17231.20236") {
     Write-Host "Office is already up to date" -ForegroundColor Green
     Add-Content -Path $logfile -Value "Office is already up to date"
