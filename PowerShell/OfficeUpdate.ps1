@@ -1,5 +1,6 @@
-﻿# Initial script created by Bert de Zeeuw
+﻿# Initial script created by B de Zeeuw
 # Script modified by R. Visser
+# Check and Update office if available.
 
 # Functie Sleep-Progress Bar
 #Use Sleep-Progress <seconds> 
@@ -14,22 +15,19 @@ Function Sleep-Progress($TotalSeconds) {
     }   
 }
  
-#Sleep-Progress 5
-
-
 #Start Office Version Check Script
 
 Write-Host "Checking script directory..." -ForegroundColor Green
-if (!(Test-Path "C:\T4")) {
-    Write-Host "Creating the C:\T4 directory..." -ForegroundColor Green
-    New-Item -ItemType Directory -Path "C:\T4"
+if (!(Test-Path "C:\Scripts")) {
+    Write-Host "Creating the C:\Scripts directory..." -ForegroundColor Green
+    New-Item -ItemType Directory -Path "C:\Scripts"
 }
 Write-Host "Script directory exists" -ForegroundColor Green
 
 Write-Host "Creating log file..." -ForegroundColor Green
-Get-Date | Out-File -FilePath "C:\T4\Office365Update.log"
-Add-Content -Path "C:\T4\Office365Update.log" -Value "Office 365 update process started" 
-$logfile = "C:\T4\Office365Update$((Get-Date).ToString('dd-MM-yyyy')).log"
+Get-Date | Out-File -FilePath "C:\Scripts\Office365Update.log"
+Add-Content -Path "C:\Scripts\Office365Update.log" -Value "Office 365 update process started" 
+$logfile = "C:\Scripts\Office365Update$((Get-Date).ToString('dd-MM-yyyy')).log"
 Write-Host "Log file created: $logfile" -ForegroundColor Green
 
 
